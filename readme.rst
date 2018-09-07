@@ -5,28 +5,30 @@ ORDER MANAGEMENT SYSTEM
 Build a Resource Order System using your own PHP MVC framework.  
 The system must able to view list of orders, view the order details, add new order, edit order and delete order. 
 The order details have the following information (store in database):
-1.	Order Id
-2.	Service Number
-3.	Segment Group
-4.	Product Name
-5.	Order Status
-6.	Remark
-7.	State
+
+1. Order Id
+2. Service Number
+3. Segment Group
+4. Product Name
+5. Order Status
+6. Remark
+7. State
 Pre-requisite: Install XAMP (Apache, MySQL, PHP etc)
 
 Business rules: 
-1.	The system must be able to list all orders and display name, order id, service number, segment group and order status.
-2.	The list should be able to sort either ascending ordescending when click on the table header.
-3.	A Order Detail window will be popped up when click on the Order Id link.
-4.	An Add New Order window will be popped up when click on the ‘Add New Order’ button.
-5.	The system must be able to delete and modify the order detail including service number, segment group, product name, remark, order status and state.
-6.	Order Id text box cannot be modified and must be disabled.
-7.	System should not allowed user to proceed if Service Number, Remark, Order Status and State are empty.
-8.	Successful message will appear after successful delete/edit action.  
-9.	The system must be able to delete and modify the order detail including service number, segment group, product name, remark, order status and state.
-10.	Order Id text box cannot be modified and must be disabled.
-11.	System should not allowed user to proceed if Service Number, Remark, Order Status and State are empty.
-12.	Successful message will appear after successful delete/edit action.  
+
+1. The system must be able to list all orders and display name, order id, service number, segment group and order status.
+2. The list should be able to sort either ascending ordescending when click on the table header.
+3. A Order Detail window will be popped up when click on the Order Id link.
+4. An Add New Order window will be popped up when click on the ‘Add New Order’ button.
+5. The system must be able to delete and modify the order detail including service number, segment group, product name, remark, order status and state.
+6. Order Id text box cannot be modified and must be disabled.
+7. System should not allowed user to proceed if Service Number, Remark, Order Status and State are empty.
+8. Successful message will appear after successful delete/edit action.  
+9. The system must be able to delete and modify the order detail including service number, segment group, product name, remark, order status and state.
+10. Order Id text box cannot be modified and must be disabled.
+11. System should not allowed user to proceed if Service Number, Remark, Order Status and State are empty.
+12. Successful message will appear after successful delete/edit action.  
 
 ************
 Installation
