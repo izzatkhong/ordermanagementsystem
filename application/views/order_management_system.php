@@ -7,6 +7,10 @@
         padding: 30px;
     }
 
+    .crud-form {
+        margin-top: 25px;
+    }
+
     .gc-container .scroll-if-required {
         padding-bottom: 0 !important;
     }   
