@@ -51,6 +51,10 @@
     .readonly_label {
         margin-top: 8px;
     }
+
+    .read-row {
+    margin-top: 0px !important;
+    }
     </style>
 
 	<meta charset="utf-8" />
