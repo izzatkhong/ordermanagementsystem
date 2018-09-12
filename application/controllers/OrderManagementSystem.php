@@ -39,7 +39,6 @@ class OrderManagementSystem extends CI_Controller {
 				}
 
 			$crud->field_type('order_status','enum',array('Processing','Completed'));
-			$crud->callback_column('order_status',array($this,'_callback_active_state'));
 			$crud->field_type('state','enum',array(
 			'Johor',
 			'Kedah',
@@ -59,6 +58,9 @@ class OrderManagementSystem extends CI_Controller {
 			'W.P. Putrajaya'));
 			$crud->set_subject('Order');
 
+			$crud->callback_column('order_status',array($this,'_callback_active_state'));
+			$crud->callback_column('order_id',array($this,'_callback_webpage_url'));
+
 			$crud->unset_clone();
 
 			$output = $crud->render();
@@ -68,8 +70,13 @@ class OrderManagementSystem extends CI_Controller {
 
 	public function _callback_active_state($value, $row)
 	{
-	if ($row->order_status == 'Completed'){
-	return "<pre style='color:green'>".$row->order_status."</pre>";}
-	else {return "<pre style='color:orange'>".$row->order_status;}
+		if ($row->order_status == 'Completed'){
+		return "<pre style='color:green'>".$row->order_status."</pre>";}
+		else {return "<pre style='color:orange'>".$row->order_status;}
+	}
+
+	public function _callback_webpage_url($value, $row)
+	{
+		return "<a href='".site_url('/ordermanagementsystem/index/read/'.$row->id)."'>$value</a>";
 	}
 }
