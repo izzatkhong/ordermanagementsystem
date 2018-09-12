@@ -25,11 +25,11 @@
     }
 
     .gc-container .header-tools {
-        padding: 10px 20px 10px 20px !important;
+        padding: 10px 10px 10px 10px !important;
     }
 
     .gc-container .footer-tools {
-        padding: 10px 20px 10px 20px !important;
+        padding: 10px 10px 10px 10px !important;
     }
 
     .oms-header {
@@ -55,6 +55,11 @@
     .read-row {
     margin-top: 0px !important;
     }
+
+    .dropdown-menu {
+    left: -98% !important;
+    }
+
     </style>
 
 	<meta charset="utf-8" />

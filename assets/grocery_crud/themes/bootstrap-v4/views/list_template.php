@@ -151,12 +151,13 @@
         			        <table class="table table-bordered grocery-crud-table table-hover">
         					<thead>
         						<tr>
-        							<th colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
-                                        <?php echo $this->l('list_actions'); ?>
-                                    </th>
+        							<th colspan="1"></th>
                                     <?php foreach($columns as $column){?>
                                         <th class="column-with-ordering" data-order-by="<?php echo $column->field_name; ?>"><?php echo $column->display_as; ?></th>
                                     <?php }?>
+                                    <th colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
+                                        <?php echo $this->l('list_actions'); ?>
+                                    </th>
         						</tr>
         						
         						<tr class="filter-row gc-search-row">
@@ -167,21 +168,6 @@
             							     </div>
                                          <?php } ?>
         							 </td>
-        							<td class="no-border-left <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
-                                        <div class="floatL">
-                                            <a href="javascript:void(0);" title="<?php echo $this->l('list_delete')?>"
-                                               class="hidden btn btn-outline-dark delete-selected-button">
-                                                <i class="el el-remove text-danger"></i>
-                                                <span class="text-danger"><?php echo $this->l('list_delete')?></span>
-                                            </a>
-                                        </div>
-                                        <div class="floatR l5">
-                                            <a href="javascript:void(0);" class="btn btn-default btn-outline-dark gc-refresh">
-                                                <i class="el el-refresh"></i>
-                                            </a>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
                                     <?php foreach($columns as $column){?>
                                         <td>
                                             <input
@@ -191,6 +177,22 @@
                                                 name="<?php echo $column->field_name; ?>" />
                                         </td>
                                     <?php }?>
+                                    <td class="no-border-left <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
+                                        <div class="floatL">
+                                            <a href="javascript:void(0);" class="btn btn-default btn-outline-dark gc-refresh">
+                                                <i class="el el-refresh"></i>
+                                            </a>
+                                        </div>
+                                        <div class="floatL l5">
+                                            <a href="javascript:void(0);" title="<?php echo $this->l('list_delete')?>"
+                                               class="hidden btn btn-outline-dark delete-selected-button">
+                                                <i class="el el-remove text-danger"></i>
+                                                <span class="text-danger"><?php echo $this->l('list_delete')?></span>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="clear"></div>
+                                    </td>
         						</tr>
 
         					</thead>

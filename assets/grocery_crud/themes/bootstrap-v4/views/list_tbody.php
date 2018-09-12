@@ -35,6 +35,11 @@
                 <input type="checkbox" class="select-row" data-id="<?php echo $row->primary_key_value; ?>" />
             <?php } ?>
         </td>
+        <?php foreach($columns as $column){?>
+            <td>
+                <?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;' ; ?>
+            </td>
+        <?php }?>
         <td <?php if ($unset_delete) { ?> style="border-left: none;"<?php } ?>
             <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
                 <div class="only-desktops"  style="white-space: nowrap">
@@ -139,10 +144,5 @@
                     <?php } ?>
                 </div>
         </td>
-        <?php foreach($columns as $column){?>
-            <td>
-                <?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;' ; ?>
-            </td>
-        <?php }?>
     </tr>
 <?php } ?>
