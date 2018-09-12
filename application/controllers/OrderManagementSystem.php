@@ -19,12 +19,7 @@ class OrderManagementSystem extends CI_Controller {
 
 	public function index()
 	{
-		// $this->_crud_output((object)array('output' => '' , 'js_files' => array() , 'css_files' => array()));
 		$crud = new grocery_CRUD();
-
-			// $crud->set_relation('customerNumber','customers','{contactLastName} {contactFirstName}');
-			// $crud->display_as('customerNumber','Customer');
-
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('orders');
 			$crud->columns('order_id','service_number','segment_group','product_name','order_status');
@@ -37,11 +32,14 @@ class OrderManagementSystem extends CI_Controller {
 				 ->display_as('State','State');	 
 			$crud->required_fields('service_number','order_status','remark','state');
 			$crud->edit_fields('order_id','service_number','segment_group','product_name','order_status','remark','state');
+			
 			$state_code = $crud->getState();
-			if($state_code == 'edit') {
-				$crud->field_type('order_id', 'readonly');
-			}
+				if($state_code == 'edit') {
+					$crud->field_type('order_id', 'readonly');
+				}
+
 			$crud->field_type('order_status','enum',array('Processing','Completed'));
+			$crud->callback_column('order_status',array($this,'_callback_active_state'));
 			$crud->field_type('state','enum',array(
 			'Johor',
 			'Kedah',
@@ -66,5 +64,12 @@ class OrderManagementSystem extends CI_Controller {
 			$output = $crud->render();
 
 			$this->_crud_output($output);
+	}
+
+	public function _callback_active_state($value, $row)
+	{
+	if ($row->order_status == 'Completed'){
+	return "<pre style='color:green'>".$row->order_status."</pre>";}
+	else {return "<pre style='color:orange'>".$row->order_status;}
 	}
 }
